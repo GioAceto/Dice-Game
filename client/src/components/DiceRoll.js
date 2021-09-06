@@ -24,8 +24,17 @@ const DiceRoll = () => {
     {
       number: 5,
       image: "test5"
+    },
+    {
+      number: 6,
+      image: "test5"
     }
   ]
+
+  const rollDie = () => {
+    let randomNumber = Math.floor(Math.random() * numberOptions.length)
+    return numberOptions[randomNumber].number
+  }
 
   return (
     <div className="container">
@@ -33,7 +42,7 @@ const DiceRoll = () => {
       <div className="image-container">
 
       </div>
-      <button onClick={() => setNumber("test")}>Roll</button>
+      <button onClick={() => setNumber(rollDie)}>Roll</button>
     </div>
   )
 }
