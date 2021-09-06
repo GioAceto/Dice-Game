@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const DiceRoll = () => {
+
+  let [number, setNumber] = useState("")
 
   const numberOptions = [
     {
@@ -27,11 +29,11 @@ const DiceRoll = () => {
 
   return (
     <div className="container">
-      <h1>You rolled a </h1>
+      <h1>You rolled a {number}</h1>
       <div className="image-container">
 
       </div>
-      <button>Roll Die</button>
+      <button onClick={() => setNumber("test")}>Roll</button>
     </div>
   )
 }
