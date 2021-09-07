@@ -6,6 +6,9 @@ const DiceRoll = () => {
   let [image, setImage] = useState("./assets/images/blank.svg");
   let [opNumber, setOpNumber] = useState("");
   let [opImage, setOpImage] = useState("./assets/images/blank.svg");
+  let [resultText, setResultTest] = useState("");
+  let [opScore, setOpScore] = useState(0);
+  let [yourScore, setYourScore] = useState(0);
 
   const numberOptions = [
     {
@@ -52,11 +55,11 @@ const DiceRoll = () => {
         <div className="score-board-inner">
           <div className="op-container">
             <h3>Opponent</h3>
-            <span></span>
+            <span>{opScore}</span>
           </div>
           <div className="you-container">
             <h3>You</h3>
-            <span></span>
+            <span>{yourScore}</span>
           </div>
         </div>
       </div>
@@ -68,7 +71,7 @@ const DiceRoll = () => {
           </div>
         </div>
         <div className="container-inner-middle">
-
+          <h2>{resultText}</h2>
         </div>
         <div className="container-inner-bottom">
           <h1>You rolled a {number}</h1>

@@ -25,12 +25,12 @@
       height: 400px;
       display: flex;
 
-      .op-container {
-        width: 100%;
-      }
-
+      .op-container,
       .you-container {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       h3 {
