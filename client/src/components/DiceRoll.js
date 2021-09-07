@@ -46,11 +46,13 @@ const DiceRoll = () => {
 
   return (
     <div className="container">
-      <h1>You rolled a {number}</h1>
-      <div className="image-container">
-        <span>{image}</span>
+      <div className="container-inner">
+        <h1>You rolled a {number}</h1>
+        <div className="image-container">
+          <span>{image}</span>
+        </div>
+        <button onClick={rollDie}> Roll</button>
       </div>
-      <button onClick={rollDie}> Roll</button>
     </div>
   )
 }
