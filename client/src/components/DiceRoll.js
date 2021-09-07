@@ -6,7 +6,7 @@ const DiceRoll = () => {
   let [image, setImage] = useState("./assets/images/blank.svg");
   let [opNumber, setOpNumber] = useState("");
   let [opImage, setOpImage] = useState("./assets/images/blank.svg");
-  let [resultText, setResultTest] = useState("");
+  let [resultText, setResultText] = useState("");
   let [opScore, setOpScore] = useState(0);
   let [yourScore, setYourScore] = useState(0);
 
@@ -44,7 +44,15 @@ const DiceRoll = () => {
     setImage(numberOptions[yourNumber].image)
     setOpNumber(numberOptions[opNumber].number)
     setOpImage(numberOptions[opNumber].image)
-  }
+
+    if (yourNumber > opNumber) {
+      setResultText("YOU WIN!")
+    } else if (yourNumber < opNumber) {
+      setResultText("YOU LOSE!")
+    } else {
+      setResultText("DRAW!")
+    }
+  };
 
   console.log(image)
 
