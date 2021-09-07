@@ -42,12 +42,34 @@ const DiceRoll = () => {
 
   return (
     <div className="container">
-      <div className="container-inner">
-        <h1>You rolled a {number}</h1>
-        <div className="image-container">
-          <img src={image} />
+      <div className="score-board">
+        <h2>Score</h2>
+        <div className="score-board-inner">
+          <div className="op-container">
+            <h3>Opponent</h3>
+          </div>
+          <div className="you-container">
+            <h3>You</h3>
+          </div>
         </div>
-        <button onClick={rollDie}> Roll</button>
+      </div>
+      <div className="container-inner">
+        <div className="container-inner-top">
+          <h1>Opponent rolled a {number}</h1>
+          <div className="image-container">
+            <img src={image} />
+          </div>
+        </div>
+        <div className="container-inner-middle">
+
+        </div>
+        <div className="container-inner-bottom">
+          <h1>You rolled a {number}</h1>
+          <div className="image-container">
+            <img src={image} />
+          </div>
+          <button onClick={rollDie}> Roll</button>
+        </div>
       </div>
     </div>
   )
