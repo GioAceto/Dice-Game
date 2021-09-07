@@ -4,6 +4,8 @@ const DiceRoll = () => {
 
   let [number, setNumber] = useState("");
   let [image, setImage] = useState("./assets/images/blank.svg");
+  let [opNumber, setOpNumber] = useState("");
+  let [opImage, setOpImage] = useState("./assets/images/blank.svg");
 
   const numberOptions = [
     {
@@ -32,10 +34,13 @@ const DiceRoll = () => {
     }
   ]
 
-  const rollDie = () => {
-    let randomNumber = Math.floor(Math.random() * numberOptions.length)
-    setNumber(numberOptions[randomNumber].number)
-    setImage(numberOptions[randomNumber].image)
+  const rollDice = () => {
+    let yourNumber = Math.floor(Math.random() * numberOptions.length)
+    let opNumber = Math.floor(Math.random() * numberOptions.length)
+    setNumber(numberOptions[yourNumber].number)
+    setImage(numberOptions[yourNumber].image)
+    setOpNumber(numberOptions[opNumber].number)
+    setOpImage(numberOptions[opNumber].image)
   }
 
   console.log(image)
@@ -47,17 +52,19 @@ const DiceRoll = () => {
         <div className="score-board-inner">
           <div className="op-container">
             <h3>Opponent</h3>
+            <span></span>
           </div>
           <div className="you-container">
             <h3>You</h3>
+            <span></span>
           </div>
         </div>
       </div>
       <div className="container-inner">
         <div className="container-inner-top">
-          <h1>Opponent rolled a {number}</h1>
+          <h1>Opponent rolled a {opNumber}</h1>
           <div className="image-container">
-            <img src={image} />
+            <img src={opImage} />
           </div>
         </div>
         <div className="container-inner-middle">
@@ -68,7 +75,7 @@ const DiceRoll = () => {
           <div className="image-container">
             <img src={image} />
           </div>
-          <button onClick={rollDie}> Roll</button>
+          <button onClick={rollDice}> Roll</button>
         </div>
       </div>
     </div>
