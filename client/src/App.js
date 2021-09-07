@@ -1,4 +1,5 @@
 import DiceRoll from './components/DiceRoll'
+import './styles/styles.scss'
 
 function App() {
   return (
