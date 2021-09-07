@@ -3,38 +3,32 @@ import React, { useState } from 'react';
 const DiceRoll = () => {
 
   let [number, setNumber] = useState("");
-  let [image, setImage] = useState("../images/blank.svg");
+  let [image, setImage] = useState("./assets/images/blank.svg");
 
   const numberOptions = [
     {
       number: 1,
-      image: '../images/one.svg',
-      id: 1
+      image: './assets/images/one.svg',
     },
     {
       number: 2,
-      image: '../images/two.svg',
-      id: 2
+      image: './assets/images/two.svg',
     },
     {
       number: 3,
-      image: '../images/three.svg',
-      id: 3
+      image: './assets/images/three.svg',
     },
     {
       number: 4,
-      image: "../images/four.svg",
-      id: 4
+      image: "./assets/images/four.svg",
     },
     {
       number: 5,
-      image: "../images/five.svg",
-      id: 5
+      image: "./assets/images/five.svg",
     },
     {
       number: 6,
-      image: "../images/six.svg",
-      id: 6
+      image: "./assets/images/six.svg",
     }
   ]
 
