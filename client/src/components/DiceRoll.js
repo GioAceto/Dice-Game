@@ -8,32 +8,32 @@ const DiceRoll = () => {
   const numberOptions = [
     {
       number: 1,
-      image: "test1",
+      image: '../images/one.svg',
       id: 1
     },
     {
       number: 2,
-      image: "test2",
+      image: '../images/two.svg',
       id: 2
     },
     {
       number: 3,
-      image: "test3",
+      image: '../images/three.svg',
       id: 3
     },
     {
       number: 4,
-      image: "test4",
+      image: "../images/four.svg",
       id: 4
     },
     {
       number: 5,
-      image: "test5",
+      image: "../images/five.svg",
       id: 5
     },
     {
       number: 6,
-      image: "test5",
+      image: "../images/six.svg",
       id: 6
     }
   ]
@@ -44,12 +44,14 @@ const DiceRoll = () => {
     setImage(numberOptions[randomNumber].image)
   }
 
+  console.log(image)
+
   return (
     <div className="container">
       <div className="container-inner">
         <h1>You rolled a {number}</h1>
         <div className="image-container">
-          <div>{image}</div>
+          <img src={image} />
         </div>
         <button onClick={rollDie}> Roll</button>
       </div>
