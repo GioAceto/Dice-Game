@@ -4,6 +4,11 @@ const DiceRoll = () => {
 
   let [number, setNumber] = useState("");
   let [image, setImage] = useState("./assets/images/blank.svg");
+  let [opNumber, setOpNumber] = useState("");
+  let [opImage, setOpImage] = useState("./assets/images/blank.svg");
+  let [resultText, setResultText] = useState("");
+  let [opScore, setOpScore] = useState(0);
+  let [yourScore, setYourScore] = useState(0);
 
   const numberOptions = [
     {
@@ -32,22 +37,59 @@ const DiceRoll = () => {
     }
   ]
 
-  const rollDie = () => {
-    let randomNumber = Math.floor(Math.random() * numberOptions.length)
-    setNumber(numberOptions[randomNumber].number)
-    setImage(numberOptions[randomNumber].image)
-  }
+  const rollDice = () => {
+    let yourNumber = Math.floor(Math.random() * numberOptions.length)
+    let opNumber = Math.floor(Math.random() * numberOptions.length)
+    setNumber(numberOptions[yourNumber].number)
+    setImage(numberOptions[yourNumber].image)
+    setOpNumber(numberOptions[opNumber].number)
+    setOpImage(numberOptions[opNumber].image)
+
+    if (yourNumber > opNumber) {
+      setResultText("YOU WIN!")
+      setYourScore(yourScore + 1)
+    } else if (yourNumber < opNumber) {
+      setResultText("YOU LOSE!")
+      setOpScore(opScore + 1)
+    } else {
+      setResultText("DRAW!")
+    }
+  };
 
   console.log(image)
 
   return (
     <div className="container">
-      <div className="container-inner">
-        <h1>You rolled a {number}</h1>
-        <div className="image-container">
-          <img src={image} />
+      <div className="score-board">
+        <h2>Score</h2>
+        <div className="score-board-inner">
+          <div className="op-container">
+            <h3>Opponent</h3>
+            <span>{opScore}</span>
+          </div>
+          <div className="you-container">
+            <h3>You</h3>
+            <span>{yourScore}</span>
+          </div>
         </div>
-        <button onClick={rollDie}> Roll</button>
+      </div>
+      <div className="container-inner">
+        <div className="container-inner-top">
+          <h1>Opponent rolled a {opNumber}</h1>
+          <div className="image-container">
+            <img src={opImage} />
+          </div>
+        </div>
+        <div className="container-inner-middle">
+          <h2>{resultText}</h2>
+        </div>
+        <div className="container-inner-bottom">
+          <h1>You rolled a {number}</h1>
+          <div className="image-container">
+            <img src={image} />
+          </div>
+          <button onClick={rollDice}> Roll</button>
+        </div>
       </div>
     </div>
   )

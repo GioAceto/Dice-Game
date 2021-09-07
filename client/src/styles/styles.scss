@@ -5,29 +5,102 @@
 }
 
 .container {
-  margin: auto;
-  width: 800px;
+  width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
+  .score-board {
+    width: 500px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &-inner {
+      width: 100%;
+      height: 400px;
+      display: flex;
+
+      .op-container,
+      .you-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h3 {
+        margin: 1rem 0;
+        text-align: center;
+      }
+    }
+  }
+
   &-inner {
-    width: 100%;
-    height: 400px;
+    width: 550px;
+    min-width: 360px;
+    height: 90%;
+    max-height: 1000px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-middle {
+      width: 100%;
+      height: 100%;
+      min-height: 4rem;
+      display: flex;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    &-bottom {
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+        height: 2rem;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        background-color: #838383;
+        color: white;
+        transition: 0.3s ease-in-out;
+        border: none;
+        text-decoration: none;
+        border-radius: 8px;
+        outline: none;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1)
+        }
+      }
+    }
 
     h1 {
       text-align: center;
-      font-size: 3rem;
-      font-weight: 400;
+      font-size: 2rem;
+      font-weight: 600;
+      width: 100%;
     }
 
     .image-container {
       margin: 2rem auto;
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,25 +110,11 @@
         height: 100%;
       }
     }
+  }
+}
 
-    button {
-      margin: 0 auto;
-      width: 200px;
-      height: 2rem;
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
-      background-color: #838383;
-      color: white;
-      transition: 0.3s ease-in-out;
-      border: none;
-      text-decoration: none;
-      border-radius: 8px;
-      outline: none;
-
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.1)
-      }
-    }
+@media only screen and (max-width: 600px) {
+  .score-board-inner {
+    flex-direction: column;
   }
 }
