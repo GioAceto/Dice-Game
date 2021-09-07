@@ -47,8 +47,10 @@ const DiceRoll = () => {
 
     if (yourNumber > opNumber) {
       setResultText("YOU WIN!")
+      setYourScore(yourScore + 1)
     } else if (yourNumber < opNumber) {
       setResultText("YOU LOSE!")
+      setOpScore(opScore + 1)
     } else {
       setResultText("DRAW!")
     }
