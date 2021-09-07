@@ -11,15 +11,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: cyan;
 
   &-inner {
     width: 100%;
-    height: 600px;
-    background-color: magenta;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
 
     h1 {
       text-align: center;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    .image-container {
+      margin: 2rem auto;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: magenta;
+    }
+
+    button {
+      margin: 0 auto;
+      width: 200px;
+      height: 2rem;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      background-color: #838383;
+      color: white;
+      transition: 0.3s ease-in-out;
+      border: none;
+      text-decoration: none;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1)
+      }
     }
   }
 }
