@@ -1,6 +1,6 @@
 # Dice Roll Game
 
-A game where the user competes against the computer opponent by rolling a random dice numbers at the same time.
+A game where the user competes against the computer by rolling random dice numbers.
 
 ## Game Rules
 
