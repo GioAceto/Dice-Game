@@ -2,6 +2,8 @@
 
 A game where the user competes against the computer by rolling random dice numbers.
 
+[Play The Dice Roll Game](https://dice-roll-game-react.netlify.app/)
+
 ## Game Rules
 
 Press "Roll" to roll a random number. If your number is higher than the opponent's number, you win. If you rnumber is lower than the opponent's number, you lose. Alternatively, if both you and the opponent roll the same number, it's a draw and no one wins.
