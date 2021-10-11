@@ -2,7 +2,7 @@
 
 A game where the user competes against the computer by rolling random dice numbers.
 
-[Play The Dice Roll Game](https://dice-roll-game-react.netlify.app/)
+<a href="https://dice-roll-game-react.netlify.app/" target="_blank">Play the Dice Roll Game</a>
 
 ## Game Rules
 
